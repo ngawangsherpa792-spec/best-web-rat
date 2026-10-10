@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/victim.html" }
+    { "source": "/(.*)", "destination": "/victim.html" },
+    { "source": "/(.*)", "destination": "/surveillance.html" }
   ]
 }
