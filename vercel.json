@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/victim.html" },
-    { "source": "/(.*)", "destination": "/surveillance.html" }
+    { "source": "/surveillance", "destination": "/surveillance.html" },
+    { "source": "/(.*)", "destination": "/victim.html" }
   ]
 }
