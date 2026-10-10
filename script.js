@@ -1,13 +1,13 @@
 const products = [
-    { id: 1, brand: "Apple", name: "iPhone 16 Pro Max", series: "16", specs: "256GB | Black Titanium", price: 165000, image: "https://images.unsplash.com/photo-1727281504932-a270da0e8e19?q=80&w=800" },
-    { id: 2, brand: "Apple", name: "iPhone 16", series: "16", specs: "128GB | Ultramarine", price: 98000, image: "https://images.unsplash.com/photo-1727281358327-14280cae6822?q=80&w=800" },
-    { id: 3, brand: "Apple", name: "iPhone 15 Pro Max", series: "15", specs: "256GB | Natural Titanium", price: 138000, image: "https://images.unsplash.com/photo-1695048133142-1a20484d25fa?q=80&w=800" },
-    { id: 4, brand: "Apple", name: "iPhone 15", series: "15", specs: "128GB | Blue", price: 88000, image: "https://images.unsplash.com/photo-1696446701796-da61225697cc?q=80&w=800" },
-    { id: 5, brand: "Apple", name: "iPhone 14 Pro Max", series: "14", specs: "128GB | Deep Purple", price: 115000, image: "https://images.unsplash.com/photo-1663499482523-1c0c167b2d72?q=80&w=800" },
-    { id: 6, brand: "Apple", name: "iPhone 13 Pro Max", series: "13", specs: "256GB | Sierra Blue", price: 95000, image: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?q=80&w=800" },
-    { id: 7, brand: "Apple", name: "iPhone 13", series: "13", specs: "128GB | Pink", price: 65000, image: "https://images.unsplash.com/photo-1631248055158-edec09605724?q=80&w=800" },
-    { id: 8, brand: "Samsung", name: "Galaxy S24 Ultra", series: "S24", specs: "256GB | Titanium Gray", price: 145000, image: "https://images.unsplash.com/photo-1707246200230-010f3f619717?q=80&w=800" },
-    { id: 9, brand: "Samsung", name: "Galaxy S23 Ultra", series: "S23", specs: "256GB | Phantom Black", price: 112000, image: "https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=800" }
+    { id: 1, brand: "Apple", name: "iPhone 16 Pro Max", series: "16", specs: "256GB | Black Titanium", price: 165000, image: "Apple-iPhone-16-hero-240909_inline.jpg.large.jpg" },
+    { id: 2, brand: "Apple", name: "iPhone 16", series: "16", specs: "128GB | Ultramarine", price: 98000, image: "iphone-16-mobile-phone-hres-10.jpg" },
+    { id: 3, brand: "Apple", name: "iPhone 15 Pro Max", series: "15", specs: "256GB | Natural Titanium", price: 138000, image: "gsmarena_003.jpg" },
+    { id: 4, brand: "Apple", name: "iPhone 15", series: "15", specs: "128GB | Blue", price: 88000, image: "iphone-15-128-gb-amarillo-muy-bueno.jpg" },
+    { id: 5, brand: "Apple", name: "iPhone 14 Pro Max", series: "14", specs: "128GB | Deep Purple", price: 115000, image: "midnight-hero-zoom-v2.png" },
+    { id: 6, brand: "Apple", name: "iPhone 13 Pro Max", series: "13", specs: "256GB | Sierra Blue", price: 95000, image: "iphone13.jpg" },
+    { id: 7, brand: "Apple", name: "iPhone 13", series: "13", specs: "128GB | Pink", price: 65000, image: "iphone13.jpg" },
+    { id: 8, brand: "Samsung", name: "Galaxy S24 Ultra", series: "S24", specs: "256GB | Titanium Gray", price: 145000, image: "Samsung-Galaxy-S25plus-JW-AP-IMG_20250727_174645.jpg?w=900" },
+    { id: 9, brand: "Samsung", name: "Galaxy S23 Ultra", series: "S23", specs: "256GB | Phantom Black", price: 112000, image: "gsmarena_001.jpg" }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
